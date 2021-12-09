@@ -1,0 +1,32 @@
+{% extends 'main/main.html' %}
+
+{% load static %}
+
+{% block title%}Create form{%endblock%}
+{% block header %}Create form{% endblock%}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/create_blog.css' %}">
+
+    <div class="create-blog-page">
+        <div class="create-blog-form">
+            <form method="POST" enctype='multipart/form-data'>
+                {% csrf_token %}
+
+                {% for error in form.errors %}
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        {{error}} gave an error.
+                    </div> 
+                {% endfor %}
+                
+                <label for='id_title'>Title:</label>            <input value='{{form.title}}' name='title'><br>
+                <labal for='id_slug'>Slug:</labal>              <input value='{{form.slug}}' name='slug'><br>
+                <labal for='id_content'>Url to embed:</labal>   <input value='{{form.content}}' name='content'><br>
+                <labal for='id_status'>Status: </labal>         {{form.status}}<br>
+
+                <button type='submit'>Update</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

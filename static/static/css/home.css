@@ -1,0 +1,10 @@
+.home-body {
+    background: #f64c72; 
+    color: white;
+}
+
+.home-body hr {
+    width: 35%; 
+    margin: auto;
+    color: white;
+}

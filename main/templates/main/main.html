@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title%}{% endblock %}</title>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'icons/fontawesome/css/all.css' %}">
+    </head>
+
+    <body>
+        <input type="checkbox" id="check">
+
+        <div class="sidebar">
+            <label onclick="check()"><i class="fas fa-times" id="cancel"></i></label>
+            <header>Main sidebar</header>
+
+            <ul>
+                <li><a href="{% url 'home' %}"><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="{% url 'read_blog' %}"><i class="fas fa-photo-video"></i>Blogs</a></li>
+                <li><a href="{% url 'read_form' %}"><i class="fas fa-align-left"></i>Forms</a></li>
+                <li><a href="{% url 'contact' %}"><i class="fas fa-address-card"></i>Contact</a></li>
+                <li><a href="{% url 'user_info' %}"><i class="fas fa-user"></i>Account</a></li>
+                <li><a href="{% url 'logout' %}"><i class="fas fa-upload"></i>login/logout</a></li>
+            </ul>
+
+        </div>
+
+        <div class='main-body'>
+            <div class="row">
+                <div class="header">
+                    <label onclick="check()" class="head_label">
+                        <i class="fas fa-bars" style="display: inline-block;" id="btn"></i>
+                        <h1 style="display: inline-block;">{% block header %}{% endblock %}</h1>
+                    </label>
+                </div>
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function check() {
+                document.getElementById('check').checked = !document.getElementById('check').checked;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+- Update home.html
+- Update the looks of the blogs and forms
+- Create user information page
+- Make users able to edit their posts
+- Make it so that not published posts do not get shown for the public

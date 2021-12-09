@@ -1,0 +1,22 @@
+{% extends 'main/main.html' %}
+
+{% block title%}Read Blog{%endblock%}
+{% block header %}Read Blog{% endblock%}
+
+{% block content %}
+<br>
+<div>
+    <br><br>
+    <h1 style="text-align: center;">{{ blog.title|safe}}</h1><br><hr style="width: 35%; margin: auto;"><br>
+    <p style="width: 60%; margin: auto; text-align: center;">Made by: {{blog.author.username|safe}} and updated on: {{ blog.updated_on}}</p>
+
+    <br>
+
+    <img src='{{ blog.thumbnail.url }}' style="width: 80%; display: block; margin: 0 auto;">
+
+    <br><hr><br>
+
+    <div style="margin: auto; width: 80%;"><a>{{ blog.content|safe }}</a></div>
+    <br>
+    </div>
+{% endblock %}

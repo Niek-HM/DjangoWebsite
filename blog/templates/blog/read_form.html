@@ -1,0 +1,28 @@
+{% extends 'main/main.html' %}
+
+{% block title%}Read Form{%endblock%}
+{% block header %}Read Form{% endblock%}
+
+{% block content %}
+<br>
+<div style="text-align: center;">
+    <br><br>
+    <h1>Most recent forms.</h1><br><hr style="width: 35%; margin: auto;"><br>
+    <p style="width: 60%; margin: auto;">Here you can find all the forms that are made. do you want to make one <a href="{% url 'create_form' %}">Click here</a>!</p>
+
+    <br>
+        
+    <div style="background: #f64c72; color: white;">
+        <br>
+        {% for form in forms %}
+            <div style="background: #242582; width: 60%; margin: 10px auto; text-align: left; min-height: 110px;">
+                <div>
+                    <a href="/blog/read_form/{{ form.slug }}/" style="font-size: 20px; color: white;">Title: {{ form.title|safe }}</a><hr>
+                    <a>Author: {{form.author|safe}}</a>
+                </div>
+            </div>
+        {% endfor %}
+        <br>
+    </div>
+    </div>
+{% endblock %}

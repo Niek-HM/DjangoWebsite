@@ -1,0 +1,30 @@
+{% extends 'main/main.html' %}
+
+{% block title%}Read Blog{%endblock%}
+{% block header %}Read Blog{% endblock%}
+
+{% block content %}
+<br>
+<div style="text-align: center;">
+    <br><br>
+    <h1>Most recent blogs.</h1><br><hr style="width: 35%; margin: auto;"><br>
+    <p style="width: 60%; margin: auto;">Here you can find all the blogs that are made. do you want to make one <a href="{% url 'create_blog' %}">Click here</a>!</p>
+
+    <br>
+        
+    <div style="background: #f64c72; color: white;">
+        <br>
+        {% for blog in blogs %}
+            <div style="background: #242582; width: 60%; margin: 10px auto; text-align: left; min-height: 110px;">
+                <img src='{{ blog.thumbnail.url }}' alt='thumbnail' style="height: 100px; padding: 5px;" align='left'>
+                
+                <div>
+                    <a href="/blog/read_blog/{{ blog.slug }}/" style="font-size: 20px; color: white;">Title: {{ blog.title|safe }}</a><hr>
+                    <a>Author: {{blog.author|safe}}</a>
+                </div>
+            </div>
+        {% endfor %}
+        <br>
+    </div>
+    </div>
+{% endblock %}

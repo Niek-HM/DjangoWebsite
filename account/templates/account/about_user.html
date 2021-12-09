@@ -1,0 +1,47 @@
+{% extends 'main/main.html' %}
+
+{% load static %}
+
+{% block title%}User information{%endblock%}
+{% block header %}User information{% endblock%}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/geoloc.css' %}">
+
+    <br>
+    <div class="geoloc-map">
+        <input type="button" id="location-button" onload="getLoc()" onclick="getLoc()" value="Get location"></button>
+        <div id="output"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        function getLoc() {
+      
+            if (navigator.geolocation) {
+                console.log('running')
+                navigator.geolocation.getCurrentPosition(function(position){
+                    document.getElementById("location-button").value = 'Here should be a map with your location on it but i am not 18 so i am not allowed to get an api key anymore... Your location is ' + Math.round(position.coords.latitude) + ', ' + Math.round(position.coords.longitude) + ' though ;)';
+                
+                    console.log(position);
+                    $.get( "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude + "," + position.coords.longitude +"&sensor=false", function(data) {
+                        console.log(data);
+                    })
+                    
+                    var img = new Image();
+                    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude + "," + position.coords.longitude + "&zoom=13&size=800x400&sensor=false";
+                    $('#output').html(img);
+                });
+            } else { console.log('Geolocation was not allowed.') }
+        };
+    </script>
+
+    <table>
+        <tr>
+            <td>{{user.email}}</td><td>{{user.is_active}}</td>
+        </tr>
+        <tr><td>{{user.first_name}}</td><td>{{user.last_name}}</td></tr>
+
+        <tr><td>{{user.date_joined}}</td><td>{{user.last_login}}</td></tr>
+    </table>
+{% endblock %}

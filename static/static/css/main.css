@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+/* color pallete: #242582, #553d67, #f64c72, #99738e, #2f2fa2, https://visme.co/blog/website-color-schemes/ */
+
+/* general - everything */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: white; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, white, rgb(230, 230, 230));
+    background: -moz-linear-gradient(right, white, rgb(230, 230, 230));
+    background: -o-linear-gradient(right, white, rgb(230, 230, 230));
+    background: linear-gradient(to left, white, rgb(230, 230, 230));
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sidebar start*/
+.sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #2f2fa2;
+    transition: all .5s ease;
+}
+
+.sidebar header {
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #242582;
+    user-select: none;
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #242582;
+    transition: .4s;
+}
+
+ul li:hover a {
+    padding-left: 50px;
+    background: #f64c72;
+    border-bottom:#553d67;
+}
+
+.sidebar ul a i {
+    margin-right: 16px;
+}
+
+#check {
+    display: none;
+}
+
+label #btn {
+    cursor: pointer;
+    background: #f64c72;
+    border-radius: 3px;
+    
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #f64c72;
+    border-radius: 3px;
+
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: white;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .sidebar label #cancel {
+    left: 195px;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+/* Sidebard end */
+
+/* Main body */
+.main-body {
+    height: 100vh;
+    transition: all .5s;
+}
+
+#check:checked ~ .main-body {
+    margin-left: 250px;
+}
+
+.row {
+    padding: 10px;
+}
+
+.header {
+    padding: 10px;
+    background-color: #2f2fa2;
+    color: white;
+}
+
+.header .head_label {
+    display: block;
+}
+
+.head_label #btn {
+    margin-right: 10px;
+}

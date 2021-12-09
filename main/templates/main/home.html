@@ -1,0 +1,44 @@
+{% extends 'main/main.html' %}
+
+{% load static %}
+
+{% block title%}Home{%endblock%}
+{% block header %}Home{% endblock%}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+
+    <br>
+    <div style="text-align: center;">
+        <br><br>
+        <h1>Welcome to the home page!</h1><br><hr style="width: 60%; margin: auto;"><br>
+        <p style="width: 60%; margin: auto;">Hello, welcome to my website. On here i have a couple of pages where you can place blogs/forms(embeds are also possible). Under here you can find some examples and explenaitions on every page.</p>
+        
+        <br>
+        <div class="home-body">
+            <br><h2>Blogs</h2><br><hr style="width: 35%; margin: auto;"><br>
+            <p style="width: 60%; margin: auto;">Here you can find all the blogs that are made and published. You can also click on the titles and see them in detail. If you want to create your own there is also a button on top which should bring you to a create blog forum.. If you publish a complete form there it will show in the read blog page.</p><br>
+        </div>
+        <br>
+
+        <h2>Forms</h2><br><hr style="width: 35%; margin: auto;"><br>
+        <p style="width: 60%; margin: auto;">Here you can find all the forms that are made and published. You can also click on the titles and see them in detail. If you want to create your own there is also a button on top which should bring you to a create form forum.. If you publish a complete form there it will show in the read form page.</p><br>
+
+        <br>
+        <div class="home-body">
+            <br><h2>Contact</h2><br><hr><br>
+            <p style="width: 60%; margin: auto;">This will bring you to a page where you can contact me. If you fill in this form it will send me an email and you a conformation (also through email).</p><br>
+        </div>
+        <br>
+
+        <h2>Account</h2><br><hr style="width: 35%; margin: auto;"><br>
+        <p style="width: 60%; margin: auto;">Here you can view all your account information. It shows your location on a map and displays all information we have about you. If you want your account removed you can always contact us.</p><br>
+
+        <br>
+        <div class="home-body">
+            <br><h2>Login/Logout</h2><br><hr><br>
+            <p style="width: 60%; margin: auto;">If you click on this the website will automatically log you out and send you to the login page. From here you can login or register a new account.</p><br>
+        </div>
+    </div>
+    </div>
+{% endblock %}
