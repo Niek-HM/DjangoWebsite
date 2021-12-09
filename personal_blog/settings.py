@@ -117,8 +117,7 @@ STATIC_URL = '/static/static/'
 MEDIA_URL = '/static/media/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static/static/",
-    '/var/www/static/',
+    BASE_DIR / "static/static/"
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
@@ -136,3 +135,7 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'niek.meijlink@gmail.com'
 EMAIL_HOST_PASSWORD = 'Hendrik1!' #!!!! Put in env if pushing to github
 EMAIL_USE_TLS = True
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
