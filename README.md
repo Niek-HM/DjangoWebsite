@@ -7,7 +7,6 @@ First of all, the dependencies you will need are:
   - django-cleanup==5.2.0
   - django-js-asset==1.2.2
   - Pillow==7.0.0
-  - whitenoise==5.3.0
   
 You can install this by installing python3 at python.org
 Then go into a terminal and type a couple of lines:
@@ -16,7 +15,6 @@ Then go into a terminal and type a couple of lines:
   - pip install django-cleanup
   - pip install django-js-asset
   - pip install Pillow
-  - pip install whitenoise
   
 Now you should be able to run it.
 
