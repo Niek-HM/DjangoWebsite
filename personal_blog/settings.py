@@ -132,8 +132,8 @@ AUTH_USER_MODEL = 'account.account'
 #! https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4NibsIIPBUe6WGn4TgQabUJXD9cbX8B1gVgYW2OuyMBzVrURT8dGRPi80c84AulSGhE7zOxW4itxVEP3eliOuZ9vbH9zA
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'niek.meijlink@gmail.com'
-EMAIL_HOST_PASSWORD = 'Hendrik1!' #!!!! Put in env if pushing to github
+EMAIL_HOST_USER = 'weggoiemail@gmail.com'
+EMAIL_HOST_PASSWORD = 'Wachtwoord1!' #!!!! Put in env if pushing to github
 EMAIL_USE_TLS = True
 
 CSRF_COOKIE_SECURE = True
