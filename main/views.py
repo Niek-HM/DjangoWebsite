@@ -19,8 +19,8 @@ def contactView(request):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
 
-            send_mail(subject, 'New message from {} {} ({}):\n{}'.format(first_name, last_name, user_email, message), 'niek.meijlink@gmail.com', ['niek@meijlink5.nl'])
-            send_mail('Conformation email ({})'.format(subject), 'Conformation email: `{}`'.format(subject, message), 'niek.meijlink@gmail.com', [user_email])
+            send_mail(subject, 'New message from {} {} ({}):\n{}'.format(first_name, last_name, user_email, message), 'weggoiemail@gmail.com', ['niek@meijlink5.nl'])
+            send_mail('Conformation email ({})'.format(subject), 'Conformation email: `{}`'.format(subject, message), 'weggoiemail@gmail.com', [user_email])
 
             messages.success(request, 'A confirmation email has been send.')
         else: messages.success(request, 'Please check if all or your information is valid.')
